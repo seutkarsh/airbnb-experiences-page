@@ -59,12 +59,14 @@ nav > img {
   flex-direction: row;
   gap: 18px;
   padding: 50px 36px;
+  overflow-x: scroll;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  width: 175px;
+  min-width: 175px;
+  position: relative;
 }
 
 .card--pic {
@@ -109,4 +111,15 @@ nav > img {
   font-weight: 300;
   line-height: 110%;
   margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.card--badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: white;
+  padding: 5px 7px;
+  border-radius: 2px;
+  font-weight: bold;
 }

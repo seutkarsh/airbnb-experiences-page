@@ -1,20 +1,22 @@
 import React from "react";
-import pic1 from "../images/pic1.png";
 import starpic from "../images/star.png";
 
-export default () => {
+export default (props) => {
   return (
     <div className="card">
-      <img className="card--pic" src={pic1} alt="" />
+      {props.item.openSpots === 0 && (
+        <div className="card--badge">SOLD OUT</div>
+      )}
+      <img className="card--pic" src={`../images/${props.item.image}`} alt="" />
       <div className="card--stats">
         <img src={starpic} alt="" />
-        <span>5.0</span>
-        <span>(6) ●</span>
-        <span>USA</span>
+        <span>{props.item.rating}</span>
+        <span>{`(${props.item.review}) ●`}</span>
+        <span>{props.item.country}</span>
       </div>
-      <p>Life lessons with Katie Zaferes</p>
+      <p>{props.item.title}</p>
       <p>
-        <strong>From $136</strong> / person
+        <strong>From ${props.item.price}</strong> / person
       </p>
     </div>
   );
